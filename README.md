@@ -5,14 +5,14 @@ This project enables real-time American Sign Language (ASL) gesture recognition 
 
 ---
 
-## 🔧 Components
+##  Components
 
 - **ESP32-S3 (XIAO)**: Captures hand gesture images using onboard camera, classifies the gesture using a deployed Edge Impulse model, and sends results via UART.
 - **Raspberry Pi**: Receives gesture names from UART, converts them into English phrases using WordNinja, and translates to Chinese using `facebook/m2m100_418M` model.
 
 ---
 
-## 📁 File Structure
+## File Structure
 
 ### 1. `ESP32_Live_Detection.ino`
 - Arduino sketch to run on the XIAO ESP32-S3.
@@ -28,7 +28,7 @@ This project enables real-time American Sign Language (ASL) gesture recognition 
 
 ---
 
-## 🛠 Installation and Setup
+##  Installation and Setup
 
 ### Raspberry Pi
 ```bash
@@ -44,14 +44,14 @@ pip install torch transformers wordninja sentencepiece pyserial
 
 ---
 
-## 🔌 UART Communication
+## UART Communication
 - ESP32-S3 sends final classified gesture result over UART (9600 baud).
 - Raspberry Pi listens on `/dev/serial0` or similar.
 - Match TX/RX pins correctly between boards.
 
 ---
 
-## ✅ Example Flow
+##  Example Flow
 
 1. ESP32 detects gesture: `ILOVEYOU`
 2. Sends via UART: `ILOVEYOU`
@@ -63,7 +63,7 @@ pip install torch transformers wordninja sentencepiece pyserial
 
 ---
 
-## 💡 Notes
+## Notes
 
 - You can modify Python script to auto-run on boot for continuous operation.
 - M2M100 model supports multilingual translation with good accuracy and runs on CPU.
